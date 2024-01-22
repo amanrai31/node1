@@ -17,6 +17,16 @@ app.get('/somehtml', (req,res) => {
     res.send("<h1> Hi I'm Aman </h1>");
 })
 
-app.listen(process.env.PORT, () => {                                               //5> Deafult port structure befor installing dotenv- port, () =>{}
+const jsond={                                                      //6> Created object (json data)
+    name:"Aman Rai",
+    age: 22,
+    interest: "Cars",
+    profession:"Backend developer"
+}
+
+app.get('/jsondata',(req,res)=>{
+    res.json(jsond);                                            //7> response in json
+})
+app.listen(process.env.PORT, () => {                                     //5> Deafult port structure befor installing dotenv- port, () =>{}
   console.log(`Example app listening on port ${port}`)
 })
