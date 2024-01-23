@@ -1,11 +1,11 @@
 console.log("Jai Shree Ram");
 
-require('dotenv').config()                              // 4>
-const express = require('express')                      //1> OR--- import express from "express"
+require('dotenv').config()                           // 4>
+const express = require('express')                 //1> OR--- import express from "express"
 const app = express()
-const port = 3000                                       //2> We can change the port
+const port = 3000                                  //2> We can change the port
 
-app.get('/', (req, res) => {                            //3> if you are on http://localhost:3000--- response hello world
+app.get('/', (req, res) => {      //3> if you are on http://localhost:3000 - response hello world
   res.send('Hello World!')
 })
 
@@ -17,7 +17,7 @@ app.get('/somehtml', (req,res) => {
     res.send("<h1> Hi I'm Aman </h1>");
 })
 
-const jsond={                                                      //6> Created object (json data)
+const jsond={                                        //6> Created object (json data)
     name:"Aman Rai",
     age: 22,
     interest: "Cars",
@@ -25,8 +25,8 @@ const jsond={                                                      //6> Created 
 }
 
 app.get('/jsondata',(req,res)=>{
-    res.json(jsond);                                            //7> response in json
+    res.json(jsond);                                       //7> response in json
 })
-app.listen(process.env.PORT, () => {                                     //5> Deafult port structure befor installing dotenv- port, () =>{}
+app.listen(process.env.PORT, () => {            //5> Deafult port structure befor installing dotenv- port, () =>{}
   console.log(`Example app listening on port ${port}`)
 })
